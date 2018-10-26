@@ -42,12 +42,12 @@
 
     <div class="row">
         {% for book in relevant %}
-        <div class="col">
+        <div class="book-col col">
           <br> 
           {% if book.offer_link %}
-          <div class="book-card card border-success text-center" style="width:10rem">
+          <div class="card card border-success text-center" style="width:10rem">
           {% else %}
-          <div class="book-card card text-center" style="width:10rem">
+          <div class="card card text-center" style="width:10rem">
           {% endif %}
               <a href="#" data-toggle="modal" data-target="#item{{forloop.counter}}">
                   <img class="card-img-top" src="{{ book.image }}" alt="book" height="250px">
@@ -109,12 +109,12 @@
 
     <div class="row">
         {% for book in all %}
-        <div class="col">
+        <div class="book-col col">
             <br> 
             {% if book.offer_link %}
-            <div class="book-card card border-success text-center" style="width:10rem">
+            <div class="card card border-success text-center" style="width:10rem">
             {% else %}
-            <div class="book-card card text-center" style="width:10rem">
+            <div class="card card text-center" style="width:10rem">
             {% endif %}
                     <a href="#" data-toggle="modal" data-target="#item{{forloop.counter}}">
                         <img class="card-img-top" src="{{ book.image }}" alt="book" height="250px">
@@ -190,15 +190,15 @@ window.addEventListener('load', (ev) => {
 });
 
 function updateVisibleBooks(minPrice, maxPrice) {
-  var booksCards = document.querySelectorAll('.book-card');
+  var booksCards = document.querySelectorAll('.book-col');
   for (card of booksCards) {
     var bookPriceElem = card.querySelector('.book-price');
     var price = Number(bookPriceElem.innerText.replace('₹', ''));
 
     if (minPrice <= price && price <= maxPrice) {
-      card.style.visibility = 'visible';
+      card.style.display = 'block';
     } else {
-      card.style.visibility = 'hidden';
+      card.style.display = 'none';
     }
   }
 };
