@@ -45,9 +45,9 @@
         <div class="book-col col">
           <br> 
           {% if book.offer_link %}
-          <div class="card card border-success text-center" style="width:10rem">
+          <div class="card border-success text-center" style="width:10rem">
           {% else %}
-          <div class="card card text-center" style="width:10rem">
+          <div class="card text-center" style="width:10rem">
           {% endif %}
               <a href="#" data-toggle="modal" data-target="#item{{forloop.counter}}">
                   <img class="card-img-top" src="{{ book.image }}" alt="book" height="250px">
@@ -112,9 +112,9 @@
         <div class="book-col col">
             <br> 
             {% if book.offer_link %}
-            <div class="card card border-success text-center" style="width:10rem">
+            <div class="card border-success text-center" style="width:10rem">
             {% else %}
-            <div class="card card text-center" style="width:10rem">
+            <div class="card text-center" style="width:10rem">
             {% endif %}
                     <a href="#" data-toggle="modal" data-target="#item{{forloop.counter}}">
                         <img class="card-img-top" src="{{ book.image }}" alt="book" height="250px">
